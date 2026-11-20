@@ -1,0 +1,540 @@
+
+/* General Settings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #100d0d;
+    color: #f5eeee;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+h2 {
+    color: #d4af65;
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.section-description {
+    text-align: center;
+    color: #b9aaaa;
+    margin-bottom: 35px;
+}
+
+/* Announcement Bar */
+.announcement {
+    background-color: #751d2b;
+    color: #ffffff;
+    text-align: center;
+    padding: 9px;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+/* Header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px 6%;
+    background-color: #181111;
+    border-bottom: 1px solid #3c2925;
+}
+
+.logo, .footer-logo {
+    color: #d4af65;
+    font-size: 27px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+nav {
+    display: flex;
+    gap: 28px;
+}
+
+nav a, .header-icons a {
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+nav a:hover, .header-icons a:hover {
+    color: #d4af65;
+}
+
+.header-icons {
+    display: flex;
+    gap: 20px;
+}
+
+
+
+/* Hero Section */
+.hero {
+    width: 100%;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    padding: 90px 8%;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(16, 13, 13, 0.95) 0%,
+            rgba(16, 13, 13, 0.75) 40%,
+            rgba(16, 13, 13, 0.15) 100%
+        ),
+        url("images/hero-banner.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+/* Hero Section with Background Video */
+.hero {
+    position: relative;
+    width: 100%;
+    min-height: 1100px;
+    display: flex;
+    align-items: center;
+    padding: 50px 8%;
+    overflow: hidden;
+    isolation: isolate;
+    background-color: #100d0d;
+}
+
+
+.hero-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+    z-index: -2;
+}
+
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(16, 13, 13, 0.95) 0%,
+        rgba(16, 13, 13, 0.75) 40%,
+        rgba(16, 13, 13, 0.15) 100%
+    );
+    z-index: -1;
+}
+
+.hero-content {
+    width: 50%;
+    max-width: 600px;
+}
+
+.hero h1 {
+    color: #ffffff;
+    font-size: clamp(38px, 4vw, 58px);
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-content > p:not(.subtitle) {
+    color: #d1c4c4;
+    max-width: 470px;
+    margin-bottom: 28px;
+}
+
+@media (max-width: 700px) {
+    .hero {
+        min-height: 480px;
+        padding: 40px 6%;
+    }
+
+    .hero-content {
+        width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+}
+
+
+.hero-content > p:not(.subtitle) {
+    color: #d1c4c4;
+    max-width: 470px;
+    margin-bottom: 28px;
+}
+
+@media (max-width: 700px) {
+    .hero {
+        min-height: 480px;
+        padding: 40px 6%;
+        background-position: 60% center;
+    }
+
+    .hero-content {
+        width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+}
+
+
+.subtitle {
+    color: #d4af65;
+    font-size: 13px;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    color: #ffffff;
+    font-size: 52px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-content > p:not(.subtitle) {
+    color: #d1c4c4;
+    max-width: 470px;
+    margin-bottom: 28px;
+}
+
+.hero-btn {
+    display: inline-block;
+    background-color: #8d2637;
+    color: white;
+    padding: 12px 25px;
+    border: 1px solid #d4af65;
+    transition: background-color 0.3s;
+}
+
+.hero-btn:hover {
+    background-color: #b18a43;
+    color: #100d0d;
+}
+
+/* Categories */
+.categories {
+    padding: 65px 6%;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.category-grid a {
+    background-color: #241717;
+    border: 1px solid #51352b;
+    color: #e5c47d;
+    padding: 22px 10px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.category-grid a:hover {
+    background-color: #751d2b;
+    border-color: #d4af65;
+}
+
+/* Product Section */
+.products {
+    padding: 65px 6%;
+    background-color: #171111;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px 20px;
+    margin-top: 30px;
+}
+
+.product {
+    background-color: #211717;
+    border: 1px solid #382724;
+    padding: 12px;
+    text-align: center;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+    border-color: #d4af65;
+}
+
+.product img {
+    width: 100%;
+    height: 280px;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+    margin-bottom: 14px;
+    background-color: #211717;
+}
+.product h3 {
+    color: #f2e5d0;
+    font-size: 17px;
+    margin: 8px 0;
+}
+
+.product p {
+    color: #d4af65;
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.product button, .newsletter button {
+    background-color: #8d2637;
+    color: white;
+    border: 1px solid #d4af65;
+    padding: 10px 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.product button:hover, .newsletter button:hover {
+    background-color: #d4af65;
+    color: #100d0d;
+}
+
+/* Brand Story */
+.story {
+    padding: 80px 8%;
+    background-color: #251719;
+    text-align: center;
+}
+
+.story-content {
+    max-width: 750px;
+    margin: auto;
+}
+
+.story-content p:not(.subtitle) {
+    color: #d1c4c4;
+    margin: 20px 0 28px;
+}
+
+/* Newsletter */
+.newsletter {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #100d0d;
+}
+
+.newsletter p {
+    color: #b9aaaa;
+    margin: 12px 0 25px;
+}
+
+.newsletter form {
+    display: flex;
+    justify-content: center;
+    max-width: 500px;
+    margin: auto;
+}
+
+.newsletter input {
+    flex: 1;
+    min-width: 0;
+    padding: 12px;
+    background-color: #211717;
+    border: 1px solid #51352b;
+    color: white;
+    outline: none;
+}
+
+.newsletter input:focus {
+    border-color: #d4af65;
+}
+
+/* Footer */
+footer {
+    padding: 35px 20px;
+    background-color: #181111;
+    border-top: 1px solid #3c2925;
+    text-align: center;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 20px 0;
+}
+
+.footer-links a:hover {
+    color: #d4af65;
+}
+
+footer p {
+    color: #b9aaaa;
+    margin-top: 8px;
+}
+
+.copyright {
+    font-size: 12px;
+    margin-top: 25px;
+}
+
+/* Laptop and Tablet Screens */
+@media (max-width: 1100px) {
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .category-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    header {
+        padding: 20px 3%;
+    }
+
+    nav {
+        gap: 15px;
+    }
+}
+
+/* Mobile Screens */
+@media (max-width: 700px) {
+    header {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .header-icons {
+        justify-content: center;
+    }
+
+    .hero {
+        min-height: 430px;
+        padding: 40px 6%;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px 10px;
+    }
+
+    .product img {
+        height: 200px;
+    }
+
+    .product h3 {
+        font-size: 14px;
+    }
+
+    .product button {
+        padding: 8px 10px;
+    }
+
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    h2 {
+        font-size: 26px;
+    }
+
+    .newsletter form {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+}
+
+
+/* Rounded Corners for the Entire Website */
+
+/* Product and category boxes */
+.product,
+.category-grid a,
+.story-content,
+.newsletter form {
+    border-radius: 12px;
+}
+
+/* Product images */
+.product img {
+    border-radius: 8px;
+}
+
+/* Buttons */
+.hero-btn,
+.product button,
+.newsletter button {
+    border-radius: 8px;
+}
+
+/* Input fields */
+.newsletter input {
+    border-radius: 8px;
+}
+
+/* Header and footer */
+header,
+footer {
+    border-radius: 0;
+}
+
+/* Announcement bar */
+.announcement {
+    border-radius: 0 0 10px 10px;
+}
+
+/* Smooth rounded corners on hover */
+.product,
+.category-grid a,
+.product button,
+.hero-btn,
+.newsletter button {
+    transition: transform 0.3s ease,
+                background-color 0.3s ease,
+                border-color 0.3s ease;
+}
+
+/* Rounded video and hero content edges */
+.hero-video {
+    border-radius: 0;
+}
+
+/* Keep the hero section full-width */
+.hero {
+    border-radius: 0;
+}
